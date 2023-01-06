@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';   
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatDialogModule} from '@angular/material/dialog';  
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';  
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import {MatNativeDateModule} from '@angular/material/core';
+import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatSelectModule} from '@angular/material/select';
 
 
@@ -18,29 +23,45 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatTableModule,
     MatCardModule,
-    MatPaginatorModule,
-    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
     MatDialogModule,
+    MatCheckboxModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatMomentDateModule
   ],
   exports: [
-    MatButtonModule,
-    MatTableModule,
     MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatFormFieldModule,
-    MatLabel,
-    MatInputModule,
     MatDialogModule,
+    MatCheckboxModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatMomentDateModule
+  ],
+  providers: [
+    {
+      provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true }
+    }
   ]
 })
 export class MaterialModule { }
